@@ -1,12 +1,10 @@
 import bagIcon from './assets/bag_icon.svg'
-
+import './CartWidget.css'
 export default function CartWidget(){
    return(
       <>
-         <div>
-            <img src={bagIcon} alt="Cart image" />
-            <span>2</span>
-         </div>
+         <a href="#"><img src={bagIcon} alt="Cart image" /></a>
+         <span>2</span>
       </>
    )
 }
