@@ -1,8 +1,9 @@
-section {
-   width: 75vw;
+.items-container {
+   width: 75%;
    margin: 50px auto;
 }
 
-section>h3 {
+.items-container-title {
+   margin-bottom: 25px;
    text-align: center;
 }

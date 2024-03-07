@@ -7,8 +7,8 @@ function App() {
   
   return (
     <>
-      <header>
-        <img src={logoComicsSons} alt="Logo comics sons" />
+      <header className='header-container'>
+        <img className='logo-img' src={logoComicsSons} alt="Logo comics sons" />
         <h1>COMICS SONS</h1>
         <NavBar />
       </header>

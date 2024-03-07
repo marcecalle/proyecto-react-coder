@@ -1,13 +1,12 @@
-img {
+.cart-icon {
    height: 30px;
-   margin-left: 30px;
 }
 
-span {
+.cart-icon:hover {
+   margin-bottom: 10px;
+}
+
+.cart-number {
    margin-left: 15px;
    padding-right: 30px;
-}
-
-a>img:hover {
-   margin-bottom: 10px;
 }

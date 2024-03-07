@@ -1,3 +1,4 @@
+import ItemList from '../ItemList/ItemList';
 import './ItemListContainer.css'
 
 // eslint-disable-next-line react/prop-types
@@ -7,12 +8,13 @@ export default function ItemListContainer({greeting}){
       color: 'white',
       fontFamily: 'monospace',
       fontSize: '2rem'
-   }
+   };
    
    return(
       <>
-         <section>
-            <h3 style={greetingStyles} >{greeting}</h3>
+         <section className='items-container'>
+            <h3 className='items-container-title' style={greetingStyles} >{greeting}</h3>
+            <ItemList />
          </section>
       </>
    )

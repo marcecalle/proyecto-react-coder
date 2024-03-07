@@ -1,0 +1,41 @@
+.button-container {
+   width: 100%;
+   display: flex;
+   justify-content: space-around;
+   margin-top: 20px;
+}
+
+.button-count {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: crimson;
+   width: 40px;
+   height: 20px;
+   border-radius: 5px;
+   color: aliceblue;
+   border: none;
+}
+
+.button-count:hover {
+   background-color: aliceblue;
+   color: #131313;
+}
+
+.button-text {
+   font-size: 1.5em;
+}
+
+.button-add-cart {
+   margin-top: 20px;
+   padding: 5px 15px;
+   border-radius: 5px;
+   background-color: crimson;
+   color: aliceblue;
+   border: none;
+}
+
+.button-add-cart:hover {
+   background-color: aliceblue;
+   color: #131313;
+}
