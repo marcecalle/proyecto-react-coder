@@ -1,10 +1,7 @@
-import { useState } from 'react' 
 import Item from "../Item/Item";
 import './ItemList.css'
 
 export default function ItemList() {
-
-   const items = [items, setItems] = useState()
 
    const products = [
       {
@@ -12,7 +9,7 @@ export default function ItemList() {
          title: 'Tomo 1',
          description: 'Acá va la descripción del producto.',
          price: '5500',
-         pictureUrl: 'https://images.cdn1.buscalibre.com/fit-in/360x360/33/c7/33c7fb4fa71eef7cb0b6cef5f7ad5b14.jpg',
+         pictureUrl: '../../../public/assets/item-01.png',
          stock: '0',
       },
 
@@ -21,7 +18,7 @@ export default function ItemList() {
          title: 'Tomo 2',
          description: 'Acá va la descripción del producto.',
          price: '5500',
-         pictureUrl: 'https://images.cdn1.buscalibre.com/fit-in/360x360/85/bc/85bc2828c43e432f31908e5632d476f4.jpg',
+         pictureUrl: '../../../public/assets/item-02.png',
          stock: '2',
       },
 
@@ -30,7 +27,7 @@ export default function ItemList() {
          title: 'Tomo 3',
          description: 'Acá va la descripción del producto.',
          price: '5500',
-         pictureUrl: '../Item/assets/item-03.png',
+         pictureUrl: '../../../public/assets/item-03.png',
          stock: '5',
       },
    ]
