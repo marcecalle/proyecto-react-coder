@@ -1,15 +1,22 @@
 import { useState } from 'React';
 import './ItemCount.css'
 
-export default function ItemCount() {
+// eslint-disable-next-line react/prop-types
+export default function ItemCount({itemStock}) {
 
    const [count, setCount] = useState(0);
 
    const handleInc = () => {
+      if(itemStock <= count) {
+         alert('ya no hay stock')
+      } else
       setCount(count + 1);
    };
 
    const handleDec = () => {
+      if(count === 0) {
+         alert('El contador está en cero')
+      } else
       setCount(count - 1);
    }
 

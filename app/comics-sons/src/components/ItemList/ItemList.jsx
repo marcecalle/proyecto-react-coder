@@ -1,7 +1,10 @@
+import { useState } from 'react' 
 import Item from "../Item/Item";
 import './ItemList.css'
 
 export default function ItemList() {
+
+   const items = [items, setItems] = useState()
 
    const products = [
       {
@@ -10,6 +13,7 @@ export default function ItemList() {
          description: 'Acá va la descripción del producto.',
          price: '5500',
          pictureUrl: 'https://images.cdn1.buscalibre.com/fit-in/360x360/33/c7/33c7fb4fa71eef7cb0b6cef5f7ad5b14.jpg',
+         stock: '0',
       },
 
       {
@@ -18,6 +22,7 @@ export default function ItemList() {
          description: 'Acá va la descripción del producto.',
          price: '5500',
          pictureUrl: 'https://images.cdn1.buscalibre.com/fit-in/360x360/85/bc/85bc2828c43e432f31908e5632d476f4.jpg',
+         stock: '2',
       },
 
       {
@@ -26,6 +31,7 @@ export default function ItemList() {
          description: 'Acá va la descripción del producto.',
          price: '5500',
          pictureUrl: '../Item/assets/item-03.png',
+         stock: '5',
       },
    ]
 
@@ -35,15 +41,18 @@ export default function ItemList() {
             <Item picture     = {products[0].pictureUrl}
                   description = {products[0].description}
                   title       = {products[0].title}
-                  price       = {products[0].price}/>
+                  price       = {products[0].price}
+                  stock       = {products[0].stock}/>
             <Item picture     = {products[1].pictureUrl}
                   description = {products[1].description}
                   title       = {products[1].title}
-                  price       = {products[1].price}/>
+                  price       = {products[1].price}
+                  stock       = {products[1].stock}/>
             <Item picture     = {products[2].pictureUrl}
                   description = {products[2].description}
                   title       = {products[2].title}
-                  price       = {products[2].price}/>
+                  price       = {products[2].price}
+                  stock       = {products[2].stock}/>
          </div>
       </>   
    )

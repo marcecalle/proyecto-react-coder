@@ -2,7 +2,7 @@ import ItemCount from '../ItemCount/ItemCount'
 import './Item.css'
 
 // eslint-disable-next-line react/prop-types
-export default function Item({title, picture, description, price}) {
+export default function Item({title, picture, description, price, stock}) {
 
 
    return(
@@ -12,7 +12,7 @@ export default function Item({title, picture, description, price}) {
             <img className='card-img' src={picture} alt="" />
             <p className='card-description' >{description}</p>
             <p>$ {price}.-</p>
-            <ItemCount />
+            <ItemCount itemStock={stock}/>
          </div>
       </>
    )
