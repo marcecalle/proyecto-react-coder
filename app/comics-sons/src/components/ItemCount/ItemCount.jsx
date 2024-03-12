@@ -1,4 +1,4 @@
-import { useState } from 'React';
+import { useState } from 'react';
 import './ItemCount.css'
 
 // eslint-disable-next-line react/prop-types
