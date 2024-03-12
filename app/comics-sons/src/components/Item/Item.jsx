@@ -2,18 +2,20 @@ import ItemCount from '../ItemCount/ItemCount'
 import './Item.css'
 
 // eslint-disable-next-line react/prop-types
-export default function Item({title, picture, description, price, stock}) {
-
+export default function Item({productos}) {
 
    return(
       <>
-         <div className='card-container'>
-            <h3 className='card-title'>{title}</h3>
-            <img className='card-img' src={picture} alt="" />
-            <p className='card-description' >{description}</p>
-            <p>$ {price}.-</p>
-            <ItemCount itemStock={stock}/>
-         </div>
+         {/* eslint-disable-next-line react/prop-types */}
+         {productos.map((data)=> (
+            <div className='card-container' key={data.id}>
+                  <h3 className='card-title' >{data.id}</h3>
+                  <img className='card-img' src={data.pictureUrl} alt="" />
+                  <p className='card-description' >{data.description}</p>
+                  <p>$ {data.price}.-</p>
+                  <ItemCount itemStock={data.stock} />
+            </div>
+         ))}
       </>
    )
 }
