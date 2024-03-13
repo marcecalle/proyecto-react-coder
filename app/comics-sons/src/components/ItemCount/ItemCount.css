@@ -26,7 +26,7 @@
    font-size: 1.5em;
 }
 
-.button-add-cart {
+.button-item-detail {
    margin-top: 20px;
    padding: 5px 15px;
    border-radius: 5px;
@@ -35,7 +35,7 @@
    border: none;
 }
 
-.button-add-cart:hover {
+.button-item-detail:hover {
    background-color: aliceblue;
    color: #131313;
 }

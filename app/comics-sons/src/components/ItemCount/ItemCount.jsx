@@ -31,7 +31,7 @@ export default function ItemCount({itemStock}) {
                <span className='button-text'>-</span>
             </button>
          </div>
-         <button className='button-add-cart'>agregar al carrito</button>
+         <button className='button-item-detail'>ver el item</button>
       </>
    );
 }

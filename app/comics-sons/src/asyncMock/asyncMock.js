@@ -4,7 +4,7 @@ const products = [
       title: 'Tomo 1',
       description: 'Acá va la descripción del producto.',
       price: '5500',
-      pictureUrl: '../../../public/assets/item-01.png',
+      pictureUrl: 'https://res.cloudinary.com/marcecalle/image/upload/v1710357678/imgComicsSons/oeganclxgdsqawcdndlv.png',
       stock: '0',
    },
 
@@ -13,7 +13,7 @@ const products = [
       title: 'Tomo 2',
       description: 'Acá va la descripción del producto.',
       price: '5500',
-      pictureUrl: '../../../public/assets/item-02.png',
+      pictureUrl: 'https://res.cloudinary.com/marcecalle/image/upload/v1710357679/imgComicsSons/jx6dmv5lu5i6cmxy54v6.png',
       stock: '2',
    },
 
@@ -22,7 +22,7 @@ const products = [
       title: 'Tomo 3',
       description: 'Acá va la descripción del producto.',
       price: '5500',
-      pictureUrl: '../../../public/assets/item-03.png',
+      pictureUrl: 'https://res.cloudinary.com/marcecalle/image/upload/v1710357680/imgComicsSons/ohrbmm5lpz5vriibp0ez.png',
       stock: '5',
    },
    {
@@ -30,7 +30,7 @@ const products = [
       title: 'Tomo 4',
       description: 'Acá va la descripción del producto.',
       price: '5500',
-      pictureUrl: '../../../public/assets/item-04.png',
+      pictureUrl: 'https://res.cloudinary.com/marcecalle/image/upload/v1710357679/imgComicsSons/e8gyrhdihobz24m2nxny.png',
       stock: '1',
    }
 ]
