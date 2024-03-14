@@ -1,18 +1,31 @@
-nav>ul {
+.header-container {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background-color: crimson;
+   height: 75px;
+}
+
+.logo-img {
+   height: 50px;
+   margin-left: 50px;
+}
+
+.header-links {
    display: flex;
    align-items: center;
 }
 
-nav>ul>li {
+.header-link {
    padding: 0 15px;
    list-style: none;
 }
 
-nav>ul>li>a {
+.header-link_a {
    text-decoration: none;
    color: aliceblue;
 }
 
-nav>ul>li>a:hover {
+.header-link_a:hover {
    color: #131313;
 }

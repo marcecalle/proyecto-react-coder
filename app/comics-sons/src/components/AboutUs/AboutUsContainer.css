@@ -1,0 +1,12 @@
+.about-us-container {
+   width: 75%;
+   margin: 50px auto;
+}
+
+.about-us-title {
+   margin-bottom: 25px;
+   text-align: center;
+   color: white;
+   font-family: monospace;
+   font-size: 2rem;
+}
