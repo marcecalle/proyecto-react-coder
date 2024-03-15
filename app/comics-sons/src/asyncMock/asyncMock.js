@@ -4,7 +4,8 @@ const products = [
       title: 'Tomo 1',
       description: 'Acá va la descripción del producto.',
       price: '5500',
-      pictureUrl: '../../../public/assets/item-01.png',
+      pictureUrl: 'https://res.cloudinary.com/marcecalle/image/upload/v1710357678/imgComicsSons/oeganclxgdsqawcdndlv.png',
+      category: 'manga',
       stock: '0',
    },
 
@@ -13,7 +14,8 @@ const products = [
       title: 'Tomo 2',
       description: 'Acá va la descripción del producto.',
       price: '5500',
-      pictureUrl: '../../../public/assets/item-02.png',
+      pictureUrl: 'https://res.cloudinary.com/marcecalle/image/upload/v1710357679/imgComicsSons/jx6dmv5lu5i6cmxy54v6.png',
+      category: 'manga',
       stock: '2',
    },
 
@@ -22,7 +24,8 @@ const products = [
       title: 'Tomo 3',
       description: 'Acá va la descripción del producto.',
       price: '5500',
-      pictureUrl: '../../../public/assets/item-03.png',
+      pictureUrl: 'https://res.cloudinary.com/marcecalle/image/upload/v1710357680/imgComicsSons/ohrbmm5lpz5vriibp0ez.png',
+      category: 'manga',
       stock: '5',
    },
    {
@@ -30,7 +33,8 @@ const products = [
       title: 'Tomo 4',
       description: 'Acá va la descripción del producto.',
       price: '5500',
-      pictureUrl: '../../../public/assets/item-04.png',
+      pictureUrl: 'https://res.cloudinary.com/marcecalle/image/upload/v1710357679/imgComicsSons/e8gyrhdihobz24m2nxny.png',
+      category: 'manga',
       stock: '1',
    }
 ]
@@ -39,14 +43,6 @@ export const getProducts = () => {
    return new Promise((resolve) => {
       setTimeout(() => {
          resolve(products);
-      }, 2000);
-   })
-}
-
-export const getProductById = (id) => {
-   return new Promise((resolve) => {
-      setTimeout(() => {
-         resolve(products.find((product) => product.id === id));
       }, 2000);
    })
 }

@@ -11,9 +11,8 @@ export default function Item({productos}) {
             <div className='card-container' key={data.id}>
                   <h3 className='card-title' >{data.id}</h3>
                   <img className='card-img' src={data.pictureUrl} alt="" />
-                  <p className='card-description' >{data.description}</p>
                   <p>$ {data.price}.-</p>
-                  <ItemCount itemStock={data.stock} />
+                  <ItemCount itemStock={data.stock} id={data.id} />
             </div>
          ))}
       </>

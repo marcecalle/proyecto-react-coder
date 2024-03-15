@@ -1,18 +1,24 @@
-import logoComicsSons from './assets/logo-comics-sons.svg'
+import './App.css'
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 import NavBar from "./components/NavBar/NavBar"
-import './App.css'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import AboutUsContainer from './components/AboutUs/AboutUsContainer'
+import ContactContainer from './components/ContactContainer/ContactContainer'
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 
 function App() {
   
   return (
     <>
-      <header className='header-container'>
-        <img className='logo-img' src={logoComicsSons} alt="Logo comics sons" />
-        <h1>COMICS SONS</h1>
+      <BrowserRouter>
         <NavBar />
-      </header>
-      <ItemListContainer greeting='Bienvenido'/>
+        <Routes>
+          <Route exact path='/' element={<AboutUsContainer />} />
+          <Route exact path='/products' element={<ItemListContainer greeting='Bienvenido'/>} />
+          <Route exact path='/contact' element={<ContactContainer />} />
+          <Route exact path='/productDetail' element={<ItemDetailContainer />} />
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
