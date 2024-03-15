@@ -1,22 +1,47 @@
-.card-container {
-   border: solid 1px;
-   border-radius: 10px;
-   width: 250px;
+.item-detail-container {
    display: flex;
-   flex-direction:column;
    align-items: center;
-   color: aliceblue;
-   padding: 15px 10px;
+   flex-direction: column;
+   margin: 50px;
 }
 
-.card-img {
+.item-detail-title {
+   margin-bottom: 25px;
+   color: white;
+   font-family: monospace;
+   font-size: 2rem;
+}
+
+.card-detail-container {
+   width: 300px;
+   display: flex;
+   flex-direction:column;
+   color: aliceblue;
+   padding: 20px 20px;
+}
+
+.card-detail-img {
    width: 100%;
    height: 100%;
    object-fit: cover;
    margin-top: 10px;
 }
 
-.card-description {
-   margin-top: 20px;
-   width: 100%;
+.card-detail-title {
+   margin-top: 10px;
+   font-size: 1.5rem;
+}
+
+.card-detail-description {
+   margin: 10px 0;
+}
+.card-detail-autor {
+   margin: 10px 0;
+}
+.card-detail-editorial {
+   margin: 10px 0;
+}
+
+.card-detail-category {
+   margin: 10px 0;
 }

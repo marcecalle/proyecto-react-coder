@@ -6,7 +6,11 @@
    flex-direction:column;
    align-items: center;
    color: aliceblue;
-   padding: 15px 10px;
+   padding: 10px 10px;
+}
+
+.card-title {
+   font-size: 1rem;
 }
 
 .card-img {
@@ -14,9 +18,26 @@
    height: 100%;
    object-fit: cover;
    margin-top: 10px;
+   margin-bottom: 20px;
 }
 
-.card-description {
+.card-price {
+   font-size: 1.5rem;
+}
+
+.button-item-detail {
+   width: 80%;
    margin-top: 20px;
-   width: 100%;
+   padding: 10px 20px;
+   border-radius: 5px;
+   background-color: crimson;
+   color: aliceblue;
+   font-size: 1rem;
+   border: none;
+}
+
+.button-item-detail:hover {
+   background-color: aliceblue;
+   color: #131313;
+   cursor: pointer;
 }
