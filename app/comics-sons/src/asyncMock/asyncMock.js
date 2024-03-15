@@ -46,3 +46,7 @@ export const getProducts = () => {
       }, 2000);
    })
 }
+
+export const getProduct = (id) => {
+   return products.find(prod => prod.id === id);
+}
