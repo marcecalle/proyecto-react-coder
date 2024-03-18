@@ -4,7 +4,7 @@ import NavBar from "./components/NavBar/NavBar"
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import AboutUsContainer from './components/AboutUs/AboutUsContainer'
 import ContactContainer from './components/ContactContainer/ContactContainer'
-import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
+import ItemDetailContainer from './components/itemDetailContainer/ItemDetailContainer'
 
 function App() {
   
