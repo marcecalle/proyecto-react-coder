@@ -23,16 +23,15 @@ export default function ItemListContainer({greeting}){
 
    return(
       <>
-         <main className='main-container'>
-               <h3 className='items-container-title' style={greetingStyles} >{greeting}</h3>
-            <section className='items-container'>
-               <div className='buttons-container'>
-                  <button className='button-category-detail' onClick={handleClickManga}>manga</button>
-                  <button className='button-category-detail' onClick={handleClickComic}>comic</button>
-               </div>
-               <ItemList />
-            </section>
-         </main>
+         <h3 className='items-container-title' style={greetingStyles} >{greeting}</h3>
+         <section className='items-container'>
+            <h5 className='category-title'>categorias</h5>
+            <div className='buttons-container'>
+               <button className='button-category-detail' onClick={handleClickManga}>manga</button>
+               <button className='button-category-detail' onClick={handleClickComic}>comic</button>
+            </div>
+            <ItemList />
+         </section>
       </>
    )
 }

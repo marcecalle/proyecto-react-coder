@@ -2,6 +2,7 @@ import { getProductsByCat } from '../../asyncMock/asyncMock';
 import { useEffect, useState } from 'react'
 import ItemsCategory from '../ItemsCategory/ItemsCategory';
 import { useParams } from 'react-router-dom'
+import './ItemCategoryContainer.css'
 
 export default function ItemCategoryContainer() {
 
@@ -16,7 +17,7 @@ export default function ItemCategoryContainer() {
    return(
       <>
          <main className='main-category-container'>
-               <h3 className='items-category-title'>Category: {category}</h3>
+               <h3 className='items-category-title'>Categoría: {category}</h3>
             <section className='items-category-container'>
                <ItemsCategory productsCategory={productsByCat} />
             </section>

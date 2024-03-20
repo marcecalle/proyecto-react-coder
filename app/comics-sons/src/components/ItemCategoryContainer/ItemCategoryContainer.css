@@ -1,7 +1,7 @@
 .main-category-container {
    display: flex;
    flex-direction: column;
-   width: 75%;
+   width: 60%;
    margin: 0px auto;
 }
 
@@ -15,7 +15,6 @@
 .items-category-title {
    margin-top: 25px;
    margin-bottom: 25px;
-   text-align: center;
    color: white;
    font-family: monospace;
    font-size: 2rem;

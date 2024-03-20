@@ -1,5 +1,5 @@
 .items-container {
-   width: 75%;
+   width: 60%;
    margin: 0px auto;
    display: flex;
    flex-direction: column;
@@ -8,8 +8,13 @@
 
 .items-container-title {
    margin-top: 25px;
-   
    text-align: center;
+}
+
+.category-title {
+   color: crimson;
+   font-size: 1rem;
+   margin-top: 25px;
 }
 
 .main-container {

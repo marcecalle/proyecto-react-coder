@@ -2,6 +2,7 @@ import './ItemDetailContainer.css'
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react"
 import { getProduct } from "../../asyncMock/asyncMock";
+import ItemCount from '../ItemCount/ItemCount';
 
 export default function ItemDetailContainer() {
 
@@ -12,7 +13,7 @@ export default function ItemDetailContainer() {
    useEffect(() => {
       setProduct(getProduct(id))
    }, [id])
-
+   console.log(product)
    return (
       <>
          <section className='item-detail-container'>
@@ -24,6 +25,7 @@ export default function ItemDetailContainer() {
                <p className='card-detail-autor'>Autor: {product.autor}</p>
                <p className='card-detail-editorial'>Editorial: {product.editorial}</p>
                <p className='card-detail-category' >Category: {product.category}.-</p>
+               <ItemCount itemStock={product.stock} id={product.id}/>
             </div>
          </section>
       </>
