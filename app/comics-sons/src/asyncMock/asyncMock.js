@@ -246,6 +246,6 @@ export const getProduct = (id) => {
    return products.find(prod => prod.id === id);
 }
 
-export const getPoductCat = (category) => {
+export const getProductsByCat = (category) => {
    return products.filter(prod => prod.category === category)
 }

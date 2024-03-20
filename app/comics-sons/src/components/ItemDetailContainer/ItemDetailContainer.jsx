@@ -5,13 +5,13 @@ import { getProduct } from "../../asyncMock/asyncMock";
 
 export default function ItemDetailContainer() {
 
-   const { prodId } = useParams();
+   const { id } = useParams();
 
    const [product, setProduct] = useState({})
 
    useEffect(() => {
-      setProduct(getProduct(prodId))
-   }, [prodId])
+      setProduct(getProduct(id))
+   }, [id])
 
    return (
       <>

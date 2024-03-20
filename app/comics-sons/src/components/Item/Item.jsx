@@ -6,8 +6,8 @@ export default function Item({productos}) {
 
    const navigate = useNavigate();
 
-   const handleClick = (prodId) => {
-      navigate(`/productDetail/${prodId}`);
+   const handleClick = (id) => {
+      navigate(`/item/${id}`);
    }
 
    return(

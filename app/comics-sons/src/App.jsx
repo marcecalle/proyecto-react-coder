@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import AboutUsContainer from './components/AboutUs/AboutUsContainer'
 import ContactContainer from './components/ContactContainer/ContactContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
+import ItemCategoryContainer from './components/ItemCategoryContainer/ItemCategoryContainer'
 
 function App() {
   
@@ -14,9 +15,10 @@ function App() {
         <NavBar />
         <Routes>
           <Route exact path='/' element={<AboutUsContainer />} />
-          <Route exact path='/products' element={<ItemListContainer greeting='Bienvenido'/>} />
+          <Route exact path='/products' element={<ItemListContainer greeting='Productos'/>} />
           <Route exact path='/contact' element={<ContactContainer />} />
-          <Route exact path='/productDetail/:prodId' element={<ItemDetailContainer />} />
+          <Route exact path='/item/:id' element={ <ItemDetailContainer />} />
+          <Route exact path='/products/:category' element={ <ItemCategoryContainer />} />
         </Routes>
       </BrowserRouter>
     </>
