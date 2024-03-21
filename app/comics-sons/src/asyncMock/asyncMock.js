@@ -8,7 +8,7 @@ const products = [
       category: 'manga',
       editorial: 'IVREA',
       autor: 'Koyoharu Gotouge',
-      stock: '0',
+      stock: 0,
    },
 
    {
@@ -20,7 +20,7 @@ const products = [
       category: 'manga',
       editorial: 'IVREA',
       autor: 'Koyoharu Gotouge',
-      stock: '2',
+      stock: 2,
    },
 
    {
@@ -32,7 +32,7 @@ const products = [
       category: 'manga',
       editorial: 'IVREA',
       autor: 'Koyoharu Gotouge',
-      stock: '5',
+      stock: 5,
    },
    {
       id: '04',
@@ -43,7 +43,7 @@ const products = [
       category: 'manga',
       editorial: 'IVREA',
       autor: 'Koyoharu Gotouge',
-      stock: '1',
+      stock: 1,
    },
    {
       id: '05',
@@ -54,7 +54,7 @@ const products = [
       category: 'manga',
       editorial: 'IVREA',
       autor: 'Koyoharu Gotouge',
-      stock: '1',
+      stock: 1,
    },
    {
       id: '06',
@@ -65,7 +65,7 @@ const products = [
       category: 'manga',
       editorial: 'IVREA',
       autor: 'Koyoharu Gotouge',
-      stock: '10',
+      stock: 10,
    },
    {
       id: '07',
@@ -76,7 +76,7 @@ const products = [
       category: 'manga',
       editorial: 'IVREA',
       autor: 'Koyoharu Gotouge',
-      stock: '3',
+      stock: 3,
    },
    {
       id: '08',
@@ -87,7 +87,7 @@ const products = [
       category: 'manga',
       editorial: 'IVREA',
       autor: 'Koyoharu Gotouge',
-      stock: '3',
+      stock: 3,
    },
    {
       id: '09',
@@ -98,7 +98,7 @@ const products = [
       category: 'manga',
       editorial: 'IVREA',
       autor: 'Koyoharu Gotouge',
-      stock: '3',
+      stock: 3,
    },
    {
       id: '10',
@@ -109,7 +109,7 @@ const products = [
       category: 'manga',
       editorial: 'IVREA',
       autor: 'Koyoharu Gotouge',
-      stock: '3',
+      stock: 3,
    },
    {
       id: '11',
@@ -120,7 +120,7 @@ const products = [
       category: 'manga',
       editorial: 'IVREA',
       autor: 'Koyoharu Gotouge',
-      stock: '3',
+      stock: 3,
    },
    {
       id: '12',
@@ -131,7 +131,7 @@ const products = [
       category: 'manga',
       editorial: 'IVREA',
       autor: 'Koyoharu Gotouge',
-      stock: '3',
+      stock: 5,
    },
    {
       id: '13',
@@ -142,7 +142,7 @@ const products = [
       category: 'manga',
       editorial: 'IVREA',
       autor: 'Koyoharu Gotouge',
-      stock: '3',
+      stock: 2,
    },
    {
       id: '14',
@@ -153,7 +153,7 @@ const products = [
       category: 'manga',
       editorial: 'IVREA',
       autor: 'Koyoharu Gotouge',
-      stock: '3',
+      stock: 8,
    },
    {
       id: '15',
@@ -164,7 +164,7 @@ const products = [
       category: 'manga',
       editorial: 'IVREA',
       autor: 'Koyoharu Gotouge',
-      stock: '3',
+      stock: 6,
    },
    {
       id: '16',
@@ -175,7 +175,7 @@ const products = [
       category: 'comic',
       editorial: 'DC comics',
       autor: 'Varios',
-      stock: '3',
+      stock: 7,
    },
    {
       id: '17',
@@ -186,7 +186,7 @@ const products = [
       category: 'comic',
       editorial: 'DC comics',
       autor: 'Jt Krul',
-      stock: '1',
+      stock: 1,
    },
    {
       id: '18',
@@ -197,7 +197,7 @@ const products = [
       category: 'comic',
       editorial: 'Ovni Press',
       autor: 'Andy King Tom',
-      stock: '2',
+      stock: 2,
    },
    {
       id: '19',
@@ -208,7 +208,7 @@ const products = [
       category: 'comic',
       editorial: 'Marvel',
       autor: 'Jonathan Hickman',
-      stock: '1',
+      stock: 1,
    },
    {
       id: '20',
@@ -219,7 +219,7 @@ const products = [
       category: 'comic',
       editorial: 'Marvel',
       autor: 'Roy Thomas',
-      stock: '1',
+      stock: 2,
    },
    {
       id: '21',
@@ -230,7 +230,7 @@ const products = [
       category: 'comic',
       editorial: 'Marvel',
       autor: 'Stan Lee',
-      stock: '1',
+      stock: 1,
    },
 ]
 
@@ -243,9 +243,18 @@ export const getProducts = () => {
 }
 
 export const getProduct = (id) => {
-   return products.find(prod => prod.id === id);
+   return new Promise((resolve)=> {
+      setTimeout(() => {
+         resolve(products.find(prod => prod.id === id));
+      }, 1000);
+   })
 }
 
 export const getProductsByCat = (category) => {
-   return products.filter(prod => prod.category === category)
+   return new Promise((resolve)=> {
+      setTimeout(() => {
+         resolve(products.filter(prod => prod.category === category
+            ));
+      }, 1000);
+   })
 }

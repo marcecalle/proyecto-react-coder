@@ -2,7 +2,7 @@ import './Item.css'
 import { useNavigate } from 'react-router-dom';
 
 // eslint-disable-next-line react/prop-types
-export default function Item({productos}) {
+export default function Item({id, title, pictureUrl, price}) {
 
    const navigate = useNavigate();
 
@@ -11,16 +11,13 @@ export default function Item({productos}) {
    }
 
    return(
-      <>
-         {/* eslint-disable-next-line react/prop-types */}
-         {productos.map((data)=> (
-            <div className='card-container' key={data.id}>
-                  <h4 className='card-title' >{data.title}</h4>
-                  <img className='card-img' src={data.pictureUrl} alt="" />
-                  <p className='card-price'>$ {data.price}.-</p>
-                  <button className='button-item-detail' onClick={()=>handleClick(data.id)}>ver detalle</button>
-            </div>
-         ))}
+      <>       
+         <div className='card-container' key={id}>
+            <h4 className='card-title' >{title}</h4>
+            <img className='card-img' src={pictureUrl} alt="" />
+            <p className='card-price'>$ {price}.-</p>
+            <button className='button-item-detail' onClick={()=>handleClick(id)}>ver detalle</button>
+         </div>
       </>
    )
 }

@@ -1,22 +1,17 @@
-import { useState, useEffect } from 'react'
 import Item from "../Item/Item";
 import './ItemList.css'
-import { getProducts } from '../../asyncMock/asyncMock';
 
-export default function ItemList() {   
+// eslint-disable-next-line react/prop-types
+export default function ItemList({products}) {   
 
-   const [allProductos, setAllProductos] = useState([]);
-
-   useEffect(() => {
-      getProducts()
-         .then((data) => setAllProductos(data))
-         .catch((error) => console.log('Error: ' + error));
-   }, []);
 
    return(
       <>
          <div className='cards-container'>
-            <Item productos={allProductos}/>
+            {
+               // eslint-disable-next-line react/prop-types
+               products.map (prod => <Item key={prod.id} {...prod} />)
+            }
          </div>
       </>   
    )

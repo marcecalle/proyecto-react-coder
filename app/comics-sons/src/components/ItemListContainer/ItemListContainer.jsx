@@ -1,6 +1,8 @@
 import ItemList from '../ItemList/ItemList';
 import './ItemListContainer.css'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { getProducts, getProductsByCat } from '../../asyncMock/asyncMock';
 
 // eslint-disable-next-line react/prop-types
 export default function ItemListContainer({greeting}){
@@ -10,15 +12,31 @@ export default function ItemListContainer({greeting}){
       fontFamily: 'monospace',
       fontSize: '2rem'
    };
-   
+
+   const [products, setProducts] = useState([]);
+
+   const { categoryId } = useParams()
+
+   useEffect(() => {
+      const asyncFunc = categoryId ? getProductsByCat : getProducts 
+
+      asyncFunc(categoryId)
+         .then(response => {
+            setProducts(response)
+         })
+         .catch(error => {
+            console.error(error)
+         })
+   }, [categoryId]);
+
    const navigate = useNavigate();
 
-   const handleClickManga = () => {
-      navigate(`/products/${'manga'}`);
+   const handleClickManga = (category) => {
+      navigate(`/category/${category}`);
    }
 
-   const handleClickComic = () => {
-      navigate(`/products/${'comic'}`);
+   const handleClickComic = (category) => {
+      navigate(`/category/${category}`);
    }
 
    return(
@@ -27,10 +45,10 @@ export default function ItemListContainer({greeting}){
          <section className='items-container'>
             <h5 className='category-title'>categorias</h5>
             <div className='buttons-container'>
-               <button className='button-category-detail' onClick={handleClickManga}>manga</button>
-               <button className='button-category-detail' onClick={handleClickComic}>comic</button>
+               <button className='button-category-detail' onClick={()=>handleClickManga('manga')}>manga</button>
+               <button className='button-category-detail' onClick={()=>handleClickComic('comic')}>comic</button>
             </div>
-            <ItemList />
+            <ItemList products={products} />
          </section>
       </>
    )
