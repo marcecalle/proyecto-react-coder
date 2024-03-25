@@ -146,17 +146,6 @@ const products = [
    },
    {
       id: '14',
-      title: 'Tomo 18',
-      description: 'Acá va la descripción del producto.',
-      price: '5500',
-      pictureUrl: 'https://res.cloudinary.com/marcecalle/image/upload/v1710528868/imgComicsSons/waj1qws4oeihxuciw34v.png',
-      category: 'manga',
-      editorial: 'IVREA',
-      autor: 'Koyoharu Gotouge',
-      stock: 8,
-   },
-   {
-      id: '15',
       title: 'Tomo 19',
       description: 'Acá va la descripción del producto.',
       price: '5500',
@@ -167,7 +156,7 @@ const products = [
       stock: 6,
    },
    {
-      id: '16',
+      id: '15',
       title: 'Superman: Believe',
       description: 'Acá va la descripción del producto.',
       price: '11500',
@@ -178,7 +167,7 @@ const products = [
       stock: 7,
    },
    {
-      id: '17',
+      id: '16',
       title: 'Adventures of Superman vol. 2',
       description: 'Acá va la descripción del producto.',
       price: '12900',
@@ -189,7 +178,7 @@ const products = [
       stock: 1,
    },
    {
-      id: '18',
+      id: '17',
       title: 'Superman arriba en el cielo',
       description: 'Acá va la descripción del producto.',
       price: '11900',
@@ -200,7 +189,7 @@ const products = [
       stock: 2,
    },
    {
-      id: '19',
+      id: '18',
       title: 'Avengers Omnibus vol. 1',
       description: 'Acá va la descripción del producto.',
       price: '12900',
@@ -211,7 +200,7 @@ const products = [
       stock: 1,
    },
    {
-      id: '20',
+      id: '19',
       title: 'Captain Marvel: Omnibus Vol. 1',
       description: 'Acá va la descripción del producto.',
       price: '90900',
@@ -222,7 +211,7 @@ const products = [
       stock: 2,
    },
    {
-      id: '21',
+      id: '20',
       title: 'Thor Epic Collection',
       description: 'Acá va la descripción del producto.',
       price: '60300',
