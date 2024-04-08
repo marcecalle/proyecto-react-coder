@@ -8,12 +8,20 @@ export default function ItemDetailContainer() {
 
    const { itemId } = useParams();
 
-   const [product, setProduct] = useState({})
+   const [product, setProduct] = useState(null)
 
    useEffect(() => {
-      getProduct(itemId)
+
+      let ignore = false;
+
+      !ignore && getProduct(itemId)
          .then((data) => setProduct(data))
          .catch((error) => console.log('Error: ' + error))
+
+         return () => {
+            ignore = true;
+         }
+
    }, [itemId])
    
    return (

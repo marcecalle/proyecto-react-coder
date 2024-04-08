@@ -1,6 +1,12 @@
+import { useState } from "react"
 import ItemCount from "../ItemCount/ItemCount"
+
 // eslint-disable-next-line react/prop-types
-export default function ItemDetail({ pictureUrl, title, description, autor, editorial, category, stock, id }) {
+export default function ItemDetail({ pictureUrl, title, description, autor, editorial, category, stock, id, initial }) {
+
+   
+   
+   
 
    return(
       <>
@@ -11,7 +17,7 @@ export default function ItemDetail({ pictureUrl, title, description, autor, edit
             <p className='card-detail-autor'>Autor: {autor}</p>
             <p className='card-detail-editorial'>Editorial: {editorial}</p>
             <p className='card-detail-category' >Category: {category}.-</p>
-            <ItemCount itemStock={stock} id={id} onAdd={(count) => console.log('Cantidad agregada al carrito', count)}/>
+            <ItemCount initial={1} itemStock={stock} id={id} onAdd={handleOnAdd}/>
          </div>
       </>
    )

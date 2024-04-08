@@ -18,15 +18,23 @@ export default function ItemListContainer({greeting}){
    const { categoryId } = useParams()
 
    useEffect(() => {
+
+      let ignore = false;
+
       const asyncFunc = categoryId ? getProductsByCat : getProducts 
 
-      asyncFunc(categoryId)
+      !ignore && asyncFunc(categoryId)
          .then(response => {
             setProducts(response)
          })
          .catch(error => {
             console.error(error)
          })
+      
+      return () => {
+         ignore = true;
+      }
+      
    }, [categoryId]);
 
    const navigate = useNavigate();

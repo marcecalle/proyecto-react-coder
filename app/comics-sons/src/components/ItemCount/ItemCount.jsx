@@ -1,33 +1,50 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import './ItemCount.css'
+import { CartContext } from "../../context/CartContext"
+
 
 // eslint-disable-next-line react/prop-types
-export default function ItemCount({itemStock, onAdd}) {
+export default function ItemCount({initial, itemStock, onAdd}) {
 
-   const [count, setCount] = useState(0);
+   const [quantity, setQuantity] = useState(initial);
 
+   const { addItem  } = useContext(CartContext)
 
    const handleInc = () => {
-         setCount(count + 1);
+      setQuantity(quantity + 1);
    };
 
    const handleDec = () => {
-      setCount(count - 1);
+      setQuantity(quantity - 1);
    };
+
+   const cartItems = {
+      id, title, price
+   }
+   
+   addItem(cartItems, quantity)
+
+   const [quantityAdd, setQuantityAdd] = useState(initial)
+
+   
+   
+   const handleOnAdd = (quantity) => {
+      setQuantityAdd(quantityAdd)
+   }
 
    return(
       <>
          <div className='button-container'>
             {
-               count === 0 ? <button className='button-count-disabled' disabled ><span className='button-text'>-</span></button> : <button className='button-count' onClick={handleDec}><span className='button-text'>-</span></button>
+               quantity === 0 ? <button className='button-count-disabled' disabled ><span className='button-text'>-</span></button> : <button className='button-count' onClick={handleDec}><span className='button-text'>-</span></button>
             }
             
-            <span>{count}</span>
+            <span>{quantity}</span>
             {
-               itemStock <= count ? <button className='button-count-disabled' disabled ><span className='button-text'>+</span></button> : <button className='button-count' onClick={handleInc}><span className='button-text'>+</span></button>
+               itemStock <= quantity ? <button className='button-count-disabled' disabled ><span className='button-text'>+</span></button> : <button className='button-count' onClick={handleInc}><span className='button-text'>+</span></button>
             }
          </div>
-         <button className='button-item-detail' onClick={() => onAdd(count)} disabled={!itemStock}>agregar al carrito</button>
+         <button className='button-item-detail' onClick={(quantity) => onAdd(handleOnAdd)} disabled={!itemStock}>agregar al carrito</button>
       </>
    );
 }

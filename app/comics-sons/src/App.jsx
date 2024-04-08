@@ -5,20 +5,23 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import AboutUsContainer from './components/AboutUs/AboutUsContainer'
 import ContactContainer from './components/ContactContainer/ContactContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
+import { CartProvider } from './context/CartContext'
 
 function App() {
   
   return (
     <>
       <BrowserRouter>
-        <NavBar />
-        <Routes>
-          <Route exact path='/nosotros' element={<AboutUsContainer />} />
-          <Route exact path='/' element={<ItemListContainer greeting='Bienvenidos'/>} />
-          <Route exact path='/category/:categoryId' element={ <ItemListContainer greeting='Bienvenidos' />} />
-          <Route exact path='/item/:itemId' element={ <ItemDetailContainer />} />
-          <Route exact path='/contact' element={<ContactContainer />} />
-        </Routes>
+          <NavBar />
+          <CartProvider>
+            <Routes>
+              <Route exact path='/nosotros' element={ <AboutUsContainer /> } />
+              <Route exact path='/' element={ <ItemListContainer greeting='Bienvenidos'/>} />
+              <Route exact path='/category/:categoryId' element={ <ItemListContainer greeting='Bienvenidos' /> } />
+              <Route exact path='/item/:itemId' element={ <ItemDetailContainer /> } />
+              <Route exact path='/contact' element={ <ContactContainer /> } />
+            </Routes>
+          </CartProvider>    
       </BrowserRouter>
     </>
   )
