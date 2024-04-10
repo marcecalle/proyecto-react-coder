@@ -1,0 +1,13 @@
+.cart-container {
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   margin: 50px;
+}
+
+.cart-title {
+   margin-bottom: 25px;
+   color: white;
+   font-family: monospace;
+   font-size: 2rem;
+}

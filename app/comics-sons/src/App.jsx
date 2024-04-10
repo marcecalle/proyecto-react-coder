@@ -6,6 +6,7 @@ import AboutUsContainer from './components/AboutUs/AboutUsContainer'
 import ContactContainer from './components/ContactContainer/ContactContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import { CartProvider } from './context/CartContext'
+import Cart from './components/Cart/Cart'
 
 function App() {
   
@@ -19,6 +20,7 @@ function App() {
               <Route exact path='/' element={ <ItemListContainer greeting='Bienvenidos'/>} />
               <Route exact path='/category/:categoryId' element={ <ItemListContainer greeting='Bienvenidos' /> } />
               <Route exact path='/item/:itemId' element={ <ItemDetailContainer /> } />
+              <Route exact path='/cart' element={ <Cart />} />
               <Route exact path='/contact' element={ <ContactContainer /> } />
             </Routes>
           </CartProvider>    

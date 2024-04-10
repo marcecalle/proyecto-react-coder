@@ -14,7 +14,7 @@ export default function Item({id, title, pictureUrl, price}) {
       <>       
          <div className='card-container' key={id}>
             <h4 className='card-title' >{title}</h4>
-            <img className='card-img' src={pictureUrl} alt="" />
+            <img className='card-img' src={pictureUrl} alt={title} />
             <p className='card-price'>$ {price}.-</p>
             <button className='button-item-detail' onClick={()=>handleClick(id)}>ver detalle</button>
          </div>

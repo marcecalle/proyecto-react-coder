@@ -38,16 +38,19 @@
    font-size: 1.5em;
 }
 
-.button-item-detail {
-   margin-top: 20px;
-   padding: 5px 15px;
-   border-radius: 5px;
-   background-color: crimson;
-   color: aliceblue;
-   border: none;
-}
-
 .button-item-detail:hover {
    background-color: aliceblue;
    color: #131313;
+}
+
+.button-item-detail-disabled {
+   width: 75%;
+   margin-top: 20px;
+   padding: 5px 20px;
+   border-radius: 5px;
+   background-color: grey;
+   color: aliceblue;
+   font-size: 1rem;
+   border: none;
+   align-self: center;
 }
