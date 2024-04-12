@@ -19,7 +19,7 @@ export default function Cart() {
                cart.map (prod => <CartItem key={prod.id} {...prod} />)) : ( <Link to={'/'}>Productos</Link>)
             }
          </div>
-         <button onClick={()=>clearCart()} >Vaciar carrito</button>
+         <button className='button-item-detail' onClick={()=>clearCart()} >Vaciar carrito</button>
       </section>
       </>
    )

@@ -16,7 +16,8 @@ export default function ItemDetail({ pictureUrl, title, description, autor, edit
       const item = {
          id,
          title,
-         price
+         price,
+         pictureUrl
       }
 
       addItem(item, quantity)
