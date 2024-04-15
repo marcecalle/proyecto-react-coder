@@ -2,7 +2,7 @@
 import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-import { collection, doc, getDoc, getDocs, getFirestore, query, where } from "firebase/firestore";
+import { addDoc, collection, doc, getDoc, getDocs, getFirestore, query, where } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -38,18 +38,17 @@ export async function getProductById(itemId){
    }
 }
 
-// export async function getProductById(itemId){
-//    const q = query(collection(db, 'items'), where('id', '==', itemId));
-//    const querySnapshot = await getDocs(q);
-//    const productById = []
-//    querySnapshot.forEach(doc => productById.push({id: doc.id, ...doc.data()}))
-//    return productById;
-// }
-
 export async function getProductsByCat(category){
    const q = query(collection(db, 'items'), where('category', '==', category));
    const querySnapshot = await getDocs(q);
    const listProdsByCat = [];
    querySnapshot.forEach(doc => listProdsByCat.push({id: doc.id, ...doc.data()}))
    return listProdsByCat;
+}
+
+export async function sendOrder(order){
+   const ordersCollection = collection(db, 'orders');
+   const docRef = await addDoc(ordersCollection, order);
+   console.log('docRef generado: ' + JSON.stringify(docRef));
+   console.log('ID generado: ' + docRef.id);
 }
