@@ -2,7 +2,8 @@ import ItemList from '../ItemList/ItemList';
 import './ItemListContainer.css'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import { getProducts, getProductsByCat } from '../../asyncMock/asyncMock';
+// import { getProducts, getProductsByCat } from '../../asyncMock/asyncMock';
+import { getProducts, getProductsByCat } from '../../firebase/firebase'
 
 // eslint-disable-next-line react/prop-types
 export default function ItemListContainer({greeting}){
@@ -24,6 +25,7 @@ export default function ItemListContainer({greeting}){
       const asyncFunc = categoryId ? getProductsByCat : getProducts 
 
       !ignore && asyncFunc(categoryId)
+         
          .then(response => {
             setProducts(response)
          })

@@ -1,7 +1,7 @@
 import './ItemDetailContainer.css'
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react"
-import { getProduct } from "../../asyncMock/asyncMock";
+import { getProductById } from "../../firebase/firebase";
 import ItemDetail from '../ItemDetail/ItemDetail';
 
 export default function ItemDetailContainer() {
@@ -14,7 +14,9 @@ export default function ItemDetailContainer() {
 
       let ignore = false;
 
-      !ignore && getProduct(itemId)
+      const asyncFunc = getProductById
+      
+      !ignore && asyncFunc(itemId)
          .then((data) => setProduct(data))
          .catch((error) => console.log('Error: ' + error))
 
@@ -23,6 +25,8 @@ export default function ItemDetailContainer() {
          }
 
    }, [itemId])
+
+   console.log(product)
    
    return (
       <>

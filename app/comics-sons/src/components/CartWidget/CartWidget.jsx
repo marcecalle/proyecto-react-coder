@@ -1,15 +1,21 @@
 import { Link } from 'react-router-dom'
 import bagIcon from './assets/bag_icon.svg'
 import './CartWidget.css'
+import { useContext } from 'react'
+import { CartContext } from '../../context/CartContext'
 
-export default function CartWidget(){
+export default function CartWidget() {
 
-   return(
+const { quantityInCart } = useContext(CartContext)
+
+
+
+return(
       <>
          <Link to="/cart">
             <img className='cart-icon' src={bagIcon} alt="Cart image" />
          </Link>
-         <span className='cart-number'>2</span>
+         <p className='cart-number'>{quantityInCart()}</p>
       </>
    )
 }
