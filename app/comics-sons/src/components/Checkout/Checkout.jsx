@@ -7,7 +7,7 @@ import { Timestamp } from "firebase/firestore"
 
 export default function Checkout(){
 
-   const { cart, total } = useContext(CartContext)
+   const { cart, total, clearCart } = useContext(CartContext)
 
    const [orderId, setOrderId] = useState('')
    const [loading, setLoading] = useState(false)
@@ -37,6 +37,7 @@ export default function Checkout(){
             console.log(error)
          } finally {
             setLoading(false)
+            clearCart()
          }
       }
 
