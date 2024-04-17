@@ -1,8 +1,8 @@
 .cart-container {
+   margin: 100px auto;
    display: flex;
    align-items: center;
    flex-direction: column;
-   margin: 50px;
 }
 
 .cart-title {
@@ -10,4 +10,13 @@
    color: white;
    font-family: monospace;
    font-size: 2rem;
+}
+
+.checkout-link_a {
+   text-decoration: none;
+   color: aliceblue;
+}
+
+.checkout-link_a:hover {
+   color: #131313;
 }

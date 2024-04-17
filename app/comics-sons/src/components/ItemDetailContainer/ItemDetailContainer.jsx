@@ -25,8 +25,6 @@ export default function ItemDetailContainer() {
          }
 
    }, [itemId])
-
-   console.log(product)
    
    return (
       <>

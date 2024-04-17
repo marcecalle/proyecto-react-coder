@@ -5,14 +5,7 @@ import { initializeApp } from "firebase/app";
 import { addDoc, collection, doc, getDoc, getDocs, getFirestore, query, where } from "firebase/firestore";
 
 // Your web app's Firebase configuration
-const firebaseConfig = {
-   apiKey: "AIzaSyDcjMoQvmRo5JWzb5NEzgjgB-ivIBVLp50",
-   authDomain: "comics-sons.firebaseapp.com",
-   projectId: "comics-sons",
-   storageBucket: "comics-sons.appspot.com",
-   messagingSenderId: "635648408908",
-   appId: "1:635648408908:web:6a63af252f5a2820d2a3e9"
-};
+const firebaseConfig = JSON.parse(import.meta.env.VITE_FIREBASE_CONFIG);
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -51,4 +44,5 @@ export async function sendOrder(order){
    const docRef = await addDoc(ordersCollection, order);
    console.log('docRef generado: ' + JSON.stringify(docRef));
    console.log('ID generado: ' + docRef.id);
+   return docRef.id
 }
