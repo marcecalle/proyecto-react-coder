@@ -240,6 +240,7 @@ body {
 }
 
 .cards-wraper {
+  width: 75%;
   display: flex;
   justify-content: flex-start;
   gap: 0.5rem;
