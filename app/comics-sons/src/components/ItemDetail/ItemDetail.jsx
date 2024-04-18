@@ -38,7 +38,7 @@ export default function ItemDetail({ pictureUrl, title, description, autor, edit
                <p className='card-detail__description__paragraph' >Stock: <span className='paragraph-detail'>{stock}</span></p>
                <div className="card-detail__buttons-wraper">
                   {
-                     quantityAdded > 0 ? ( <Link to='/cart' ><button className='card-detail__button-wraper__button primary-button' >Finalizar compra</button></Link> ) : ( <ItemCount initial={0} itemStock={stock} id={id} onAdd={(quantity) => handleOnAdd(quantity)} /> )
+                     quantityAdded > 0 ? ( <Link className='card-detail__button-end-buy' to='/cart' ><button className='card-detail__button-end-buy'>Finalizar compra</button></Link> ) : ( <ItemCount initial={0} itemStock={stock} id={id} onAdd={(quantity) => handleOnAdd(quantity)} /> )
                   }
                </div>
             </div>

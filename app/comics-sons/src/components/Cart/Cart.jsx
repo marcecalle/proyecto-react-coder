@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import './Cart.css'
+import '../../index.css'
 import { CartContext } from '../../context/CartContext'
 import CartItem from '../CartItem/CartItem'
 import { Link } from 'react-router-dom'
@@ -10,23 +10,23 @@ export default function Cart() {
 
    return(
       <>
-      <section className='cart-container'>
-         <h3 className='cart-title' >Detalle Carrito</h3>
-         <div className='cards-container'>
+      <section className='main-wraper'>
+         <h3 className='main-wraper__title' >Detalle Carrito</h3>
+         <section className='cart-wraper'>
             {
                cart ? (
                // eslint-disable-next-line react/prop-types
                cart.map (prod => <CartItem key={prod.id} {...prod} />)) : ( <Link to={'/'}>Productos</Link>)
             }
-         </div>
-         {
-            cart == '' ? (<p>El Carrito está vacío</p>) :
+            {
+            cart == '' ? (<p className='empty-cart-text' >El Carrito está vacío</p>) :
             <>
-               <span>Total del carrito: $ {total()}</span>
-               <button className='button-item-detail' onClick={()=>clearCart()} >Vaciar carrito</button>
-               <button className='button-item-detail'><Link className='checkout-link_a' to={'/checkout'}>Checkout</Link></button>
+               <span className='cart-text__total'>Total del carrito: $ {total()}</span>
+               <button className='delete-cart-button' onClick={()=>clearCart()} >Vaciar carrito</button>
+               <Link className='checkout-button' to={'/checkout'}><button className='checkout-button'>Checkout</button></Link>
             </>
-         }
+            }
+         </section>
       </section>
       </>
    )

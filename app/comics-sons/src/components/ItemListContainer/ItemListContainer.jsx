@@ -1,18 +1,12 @@
 import ItemList from '../ItemList/ItemList';
-import './ItemListContainer.css'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 // import { getProducts, getProductsByCat } from '../../asyncMock/asyncMock';
 import { getProducts, getProductsByCat } from '../../firebase/firebase'
+import '../../index.css'
 
 // eslint-disable-next-line react/prop-types
 export default function ItemListContainer({greeting}){
-   
-   const greetingStyles = {
-      color: 'white',
-      fontFamily: 'monospace',
-      fontSize: '2rem'
-   };
 
    const [products, setProducts] = useState([]);
 
@@ -51,14 +45,16 @@ export default function ItemListContainer({greeting}){
 
    return(
       <>
-         <h3 className='items-container-title' style={greetingStyles} >{greeting}</h3>
-         <section className='items-container'>
-            <h5 className='category-title'>categorias</h5>
-            <div className='buttons-container'>
-               <button className='button-category-detail' onClick={()=>handleClickManga('manga')}>manga</button>
-               <button className='button-category-detail' onClick={()=>handleClickComic('comic')}>comic</button>
-            </div>
-            <ItemList products={products} />
+         <section className='main-wraper'>
+            <h3 className='main-wraper__title' >{greeting}</h3>
+            <section className='category-wraper'>
+               <h5 className='category-title'>categorias</h5>
+               <div className='buttons-wraper'>
+                  <button className='button-category' onClick={()=>handleClickManga('manga')}>manga</button>
+                  <button className='button-category' onClick={()=>handleClickComic('comic')}>comic</button>
+               </div>
+               <ItemList products={products} />
+            </section>
          </section>
       </>
    )

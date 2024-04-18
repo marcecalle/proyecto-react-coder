@@ -1,5 +1,5 @@
-import './Item.css'
 import { useNavigate } from 'react-router-dom';
+import '../../index.css'
 
 // eslint-disable-next-line react/prop-types
 export default function Item({id, title, pictureUrl, price}) {
@@ -12,12 +12,12 @@ export default function Item({id, title, pictureUrl, price}) {
 
    return(
       <>       
-         <div className='card-container' key={id}>
-            <h4 className='card-title' >{title}</h4>
+         <article className='card-wraper' key={id}>
             <img className='card-img' src={pictureUrl} alt={title} />
+            <h4 className='card-title' >{title}</h4>
             <p className='card-price'>$ {price}.-</p>
-            <button className='button-item-detail' onClick={()=>handleClick(id)}>ver detalle</button>
-         </div>
+            <button className='button-card-detail' onClick={()=>handleClick(id)}>ver detalle</button>
+         </article>
       </>
    )
 }

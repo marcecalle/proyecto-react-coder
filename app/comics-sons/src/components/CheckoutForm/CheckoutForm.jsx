@@ -1,4 +1,5 @@
 import { useState } from "react"
+import '../../index.css'
 
 // eslint-disable-next-line react/prop-types
 export default function CheckoutForm({ onConfirm }){
@@ -17,37 +18,38 @@ export default function CheckoutForm({ onConfirm }){
       onConfirm(formData)
    }
 
-   
-
    return(
       <>
-         <section>
-            <form onSubmit={handleSubmit}>
-               <label >Nombre
-                  <input 
+         <section className="form-wraper">
+            <form className='input-wraper' onSubmit={handleSubmit}>
+               <label className='form-text'>Nombre
+                  <br /><input 
+                     className="input"
                      type="text" 
                      value={name}
                      onChange={({target}) => setName(target.value)}
                      placeholder="Nombre"
                      />
                </label>
-               <label >Teléfono
-                  <input 
+               <label className='form-text'>Teléfono
+                  <br /><input
+                     className="input"
                      type="phone"
                      value={phone}
                      onChange={({target}) => setPhone(target.value)}
                      placeholder="Teléfono"
                      />
                </label>
-               <label >Email
-                  <input 
+               <label className='form-text'>Email
+                  <br /><input 
+                     className="input"
                      type="email"
                      value={email}
                      onChange={({target}) => setEmail(target.value)}
                      placeholder="Email"
                   />
                </label>
-               <button type='submit' >Enviar orden</button>
+               <button className="send-order-button" type='submit' >Enviar orden</button>
             </form>
          </section>
       </>

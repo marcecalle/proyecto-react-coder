@@ -51,8 +51,8 @@ export default function Checkout(){
    
    return(
       <>
-         <section className="checkout-container">
-            <h3 className='checkout-title' >Checkout</h3>
+         <section className="main-wraper">
+            <h3 className='main-wraper__title' >Checkout</h3>
             {
                cart == '' ? <p>El Carrito está vacío</p> : <CheckoutForm onConfirm={addOrder} />
             }

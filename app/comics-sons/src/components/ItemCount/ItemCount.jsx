@@ -20,20 +20,20 @@ export default function ItemCount({initial, itemStock, onAdd }) {
             {
                quantity === 0 ?
                   <button className='item-count__button button-disabled' disabled >
-                     <span className='item-count__button__text'>-</span>
+                     -
                   </button> : 
-                  <button className='item-count__button-count' onClick={handleDec}>
-                     <span className='item-count__button__text'>-</span>
+                  <button className='item-count__button' onClick={handleDec}>
+                     -
                   </button>
             }
-            <span>{quantity}</span>
+            <span className='item-count__quantity'>{quantity}</span>
             {
                itemStock <= quantity ?
                   <button className='item-count__button button-disabled' disabled >
-                     <span className='item-count__button__text'>+</span>
+                     +
                   </button> :
-                  <button className='item-count__button-count' onClick={handleInc}>
-                     <span className='item-count__button__text'>+</span>
+                  <button className='item-count__button' onClick={handleInc}>
+                     +
                   </button>
             }
          </div>
