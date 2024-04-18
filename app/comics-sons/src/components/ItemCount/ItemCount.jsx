@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './ItemCount.css'
+import '../../index.css'
 
 // eslint-disable-next-line react/prop-types
 export default function ItemCount({initial, itemStock, onAdd }) {
@@ -16,19 +16,34 @@ export default function ItemCount({initial, itemStock, onAdd }) {
 
    return(
       <>
-         <div className='button-container'>
+         <div className='item-count__wraper'>
             {
-               quantity === 0 ? <button className='button-count-disabled' disabled ><span className='button-text'>-</span></button> : <button className='button-count' onClick={handleDec}><span className='button-text'>-</span></button>
+               quantity === 0 ?
+                  <button className='item-count__button button-disabled' disabled >
+                     <span className='item-count__button__text'>-</span>
+                  </button> : 
+                  <button className='item-count__button-count' onClick={handleDec}>
+                     <span className='item-count__button__text'>-</span>
+                  </button>
             }
-            
             <span>{quantity}</span>
             {
-               itemStock <= quantity ? <button className='button-count-disabled' disabled ><span className='button-text'>+</span></button> : <button className='button-count' onClick={handleInc}><span className='button-text'>+</span></button>
+               itemStock <= quantity ?
+                  <button className='item-count__button button-disabled' disabled >
+                     <span className='item-count__button__text'>+</span>
+                  </button> :
+                  <button className='item-count__button-count' onClick={handleInc}>
+                     <span className='item-count__button__text'>+</span>
+                  </button>
             }
          </div>
-         {
-            quantity === 0 ? <button className='button-item-detail-disabled' onClick={() => onAdd(quantity)} disabled >agregar al carrito</button> : <button className='button-item-detail' onClick={() => onAdd(quantity)} >agregar al carrito</button>
-         }
+         <div className='item-add-cart__wraper'>
+            {
+               quantity === 0 ?
+               <button className='item-add-cart__button button-disabled' onClick={() => onAdd(quantity)} disabled >agregar al carrito</button> :
+               <button className='item-add-cart__button button-active primary-button' onClick={() => onAdd(quantity)} >agregar al carrito</button>
+            }
+         </div>
       </>
    );
 }

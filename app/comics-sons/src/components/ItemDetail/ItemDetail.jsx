@@ -2,6 +2,7 @@ import { useContext, useState } from "react"
 import ItemCount from "../ItemCount/ItemCount"
 import { Link } from "react-router-dom"
 import { CartContext } from "../../context/CartContext"
+import '../../index.css'
 
 // eslint-disable-next-line react/prop-types
 export default function ItemDetail({ pictureUrl, title, description, autor, editorial, category, stock, id, price }) {
@@ -25,18 +26,23 @@ export default function ItemDetail({ pictureUrl, title, description, autor, edit
 
    return(
       <>
-         <div className='card-detail-container' >
-            <img className='card-detail-img' src={pictureUrl} alt={title} />
-            <h3 className='card-detail-title' >{title}</h3>
-            <p className='card-detail-description' >Descripción: {description}</p>
-            <p className='card-detail-autor'>Autor: {autor}</p>
-            <p className='card-detail-editorial'>Editorial: {editorial}</p>
-            <p className='card-detail-category' >Category: {category}.-</p>
-            <p className='' >Stock: {stock} </p>
-            {
-               quantityAdded > 0 ? ( <Link to='/cart' ><button className='button-item-detail' >Finalizar compra</button></Link> ) : ( <ItemCount initial={0} itemStock={stock} id={id} onAdd={(quantity) => handleOnAdd(quantity)} /> )
-            }
-         </div>
+         <article className='card-detail' >
+            <img className='card-detail__img' src={pictureUrl} alt={title} />
+            <div className="card-detail__description">
+               <h3 className='card-detail__description__title' >{title}</h3>
+               <p className='card-detail__description__paragraph' >Descripción: <span className='paragraph-detail'>{description}</span>
+               </p>
+               <p className='card-detail__description__paragraph'>Autor: <span className='paragraph-detail'>{autor}</span></p>
+               <p className='card-detail__description__paragraph'>Editorial: <span className='paragraph-detail'>{editorial}</span></p>
+               <p className='card-detail__description__paragraph' >Category: <span className='paragraph-detail'>{category}.-</span></p>
+               <p className='card-detail__description__paragraph' >Stock: <span className='paragraph-detail'>{stock}</span></p>
+               <div className="card-detail__buttons-wraper">
+                  {
+                     quantityAdded > 0 ? ( <Link to='/cart' ><button className='card-detail__button-wraper__button primary-button' >Finalizar compra</button></Link> ) : ( <ItemCount initial={0} itemStock={stock} id={id} onAdd={(quantity) => handleOnAdd(quantity)} /> )
+                  }
+               </div>
+            </div>
+         </article>
       </>
    )
 }

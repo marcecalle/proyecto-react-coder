@@ -1,4 +1,4 @@
-import './ItemDetailContainer.css'
+import '../../index.css'
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react"
 import { getProductById } from "../../firebase/firebase";
@@ -28,8 +28,8 @@ export default function ItemDetailContainer() {
    
    return (
       <>
-         <section className='item-detail-container'>
-            <h3 className='item-detail-title' >Detalle producto</h3>
+         <section className='main-wraper'>
+            <h3 className='main-wraper__title' >Detalle del producto</h3>
                <ItemDetail  {...product}/>
          </section>
       </>
